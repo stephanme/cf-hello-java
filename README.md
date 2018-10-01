@@ -20,11 +20,11 @@ Deploy to Cloud Foundry
 cf push
 ```
 
-You may need to adapt the route in manifest.yml.
+You may need to set the route in manifest.yml or push with -n.
 
 Access Application
 ------------------
 
 ```
 curl https://hello-java.<domain>
-```cf
+```
