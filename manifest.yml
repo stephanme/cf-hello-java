@@ -1,0 +1,7 @@
+---
+applications:
+- name: hello-java
+  buildpack: https://github.com/cloudfoundry/java-buildpack.git#v4.15
+  memory: 1G
+  instances: 1
+  path: target/hello-java.war
