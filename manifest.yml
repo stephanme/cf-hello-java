@@ -1,7 +1,11 @@
 ---
 applications:
 - name: hello-java
-  buildpack: https://github.com/cloudfoundry/java-buildpack.git#v4.15
+  buildpack: https://github.com/cloudfoundry/java-buildpack.git#v4.47
   memory: 1G
   instances: 1
+  random-route: true
   path: target/hello-java.war
+  env:
+    JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 17.+ } }'
+  
