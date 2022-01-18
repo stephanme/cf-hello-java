@@ -20,13 +20,14 @@ Deploy to Cloud Foundry
 cf push
 ```
 
-You may need to set the route in manifest.yml or push with -n.
+The app gets a random route assigned.
 
 Access Application
 ------------------
 
 ```
-curl https://hello-java.<domain>
+ROUTE=$(cf curl "/v3/apps/$(cf app hello-java --guid)/routes" | jq -r .resources[0].url)
+curl https://$ROUTE
 ```
 
 Run Task
