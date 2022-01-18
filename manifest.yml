@@ -8,4 +8,11 @@ applications:
   path: target/hello-java.war
   env:
     JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 17.+ } }'
+  processes:
+  - type: task
+    command: >-
+      .java-buildpack/open_jdk_jre/bin/java -cp ./WEB-INF/classes org.example.Task
+    health-check-type: none
+    instances: 0
+    memory: 1G
   
